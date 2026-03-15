@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>艺术品展示系统 - 首页</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="glass-header">
+        <div class="container">
+            <h1 class="logo">MART ART</h1>
+            <nav>
+                <a href="index.html" class="active">首页</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <h2>探索艺术之美</h2>
+            <p>呈现来自全球的精选艺术品，感受跨越时空的艺术魅力。</p>
+        </section>
+
+        <div class="artwork-grid" id="artworkGrid">
+            <!-- 数据将由 JS 动态注入 -->
+            <div class="loader">正在加载艺术品...</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Mart Artwork System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="script.js"></script>
+</body>
+</html>
