@@ -2,11 +2,10 @@
   "name": "mart-artwork-monorepo",
   "version": "1.0.0",
   "private": true,
-  "description": "Exhibition System Monorepo",
   "type": "module",
   "scripts": {
     "start": "node backend/app.js",
-    "dev": "node --watch backend/app.js"
+    "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend"
   },
   "dependencies": {
     "cors": "^2.8.5",
