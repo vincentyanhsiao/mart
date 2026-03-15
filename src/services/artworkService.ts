@@ -18,61 +18,20 @@ export const artworkService = {
     loadall?: boolean;
     sort?: string;
   }) => {
-    try {
-      const response = await api.get('/artworks', { params });
-      if (response.data && response.data.code === 200) {
-        return response.data.data.map((item: any) => ({
-          id: String(item.id),
-          titleCn: item.title,
-          titleEn: item.title,
-          artist: { name: item.artist },
-          category: '综合',
-          departmentId: '1',
-          price: '价格待询',
-          priceStatus: 'inquiry',
-          isPrivateSales: true,
-          imageUrl: item.image_url,
-          releaseTime: item.create_time,
-          description: item.description,
-          medium: '不限',
-          country: '不限'
-        }));
-      }
-      return mockArtworks;
-    } catch (error) {
-      console.error('获取艺术品列表失败，使用降级数据', error);
-      return mockArtworks;
-    }
+    // 模拟网络请求延迟
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    // 这里应该是真实的 API 调用
+    // return api.get('/artworks', { params });
+    
+    // 暂时返回模拟数据逻辑在组件中处理，或者在这里模拟
+    return mockArtworks;
   },
 
   // 获取艺术品详情
   getArtworkDetail: async (id: string) => {
-    try {
-      const response = await api.get(`/artworks/${id}`);
-      if (response.data && response.data.code === 200) {
-        const item = response.data.data;
-        return {
-          id: String(item.id),
-          titleCn: item.title,
-          titleEn: item.title,
-          artist: { name: item.artist },
-          category: '综合',
-          departmentId: '1',
-          price: '价格待询',
-          priceStatus: 'inquiry',
-          isPrivateSales: true,
-          imageUrl: item.image_url,
-          releaseTime: item.create_time,
-          description: item.description,
-          medium: '不限',
-          country: '不限'
-        };
-      }
-      return mockArtworks.find(item => item.id === id);
-    } catch (error) {
-      console.error('获取艺术品详情失败，使用降级数据', error);
-      return mockArtworks.find(item => item.id === id);
-    }
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return mockArtworks.find(item => item.id === id);
   },
 
   // 获取部门列表 (分类)
