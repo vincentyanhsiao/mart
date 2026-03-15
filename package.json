@@ -1,0 +1,11 @@
+{
+  "name": "mart-artwork-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Exhibition System Monorepo",
+  "scripts": {
+    "start": "npm start --prefix backend",
+    "backend-dev": "npm run dev --prefix backend",
+    "frontend-dev": "npm run dev --prefix frontend"
+  }
+}
