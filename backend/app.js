@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import artworkRoutes from './routes/artworks.js';
+import pool from './config/db.js';
 
 dotenv.config();
 
@@ -25,7 +26,7 @@ app.use('/api/artworks', artworkRoutes);
 // 健康检查接口 (增加数据库连通性自检)
 app.get('/health', async (req, res) => {
   try {
-    const [rows] = await db.query('SELECT 1 as status');
+    const [rows] = await pool.query('SELECT 1 as status');
     res.json({ 
       code: 200, 
       data: { 
@@ -66,7 +67,7 @@ const startServer = async () => {
   console.log(`静态资源托管路径: ${path.join(__dirname, '../frontend')}`);
   
   try {
-    const [rows] = await db.query('SELECT 1');
+    const [rows] = await pool.query('SELECT 1');
     console.log('✅ 数据库连通性自检通过');
   } catch (err) {
     console.error('❌ 数据库连通性自检失败！请检查环境变量配置');
