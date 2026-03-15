@@ -1,0 +1,53 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+@theme {
+  --font-sans: "Noto Sans SC", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Noto Sans SC", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-logo: "Cal Sans", "Outfit", sans-serif;
+}
+
+body {
+  @apply text-gray-900 antialiased;
+}
+
+/* Ant Design Customization Overrides */
+.ant-menu-horizontal {
+  line-height: 64px;
+}
+
+.ant-menu-item {
+  @apply text-xs uppercase tracking-widest font-medium !text-gray-400 hover:!text-black;
+}
+
+.ant-menu-item-selected {
+  @apply !text-black !font-bold;
+}
+
+.ant-menu-item-selected::after {
+  @apply !border-black;
+}
+
+.custom-select .ant-select-selector {
+  @apply !border-none !shadow-none !bg-transparent !px-0;
+}
+
+.custom-pagination .ant-pagination-item {
+  @apply rounded-none border-gray-200;
+}
+
+.custom-pagination .ant-pagination-item-active {
+  @apply border-black bg-black;
+}
+
+.custom-pagination .ant-pagination-item-active a {
+  @apply !text-white;
+}
+
+.consultant-modal .ant-modal-content {
+  @apply rounded-none p-0 overflow-hidden;
+}
+
+.consultant-modal .ant-modal-close {
+  @apply top-4 right-4;
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://zeabur.com/schema.json",
+  "buildType": "npm",
+  "installCommand": "npm install --prefix backend && npm install --prefix frontend",
+  "buildCommand": "npm run build --prefix frontend",
+  "startCommand": "npm start --prefix backend",
+  "port": 3000
+}
